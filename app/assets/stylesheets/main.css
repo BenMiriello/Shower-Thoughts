@@ -1,0 +1,355 @@
+/* mini reset */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* layout */
+body {
+  font-family: 'Kulim Park', sans-serif;
+  letter-spacing: 0px;
+  /* background-color: rgb(255, 255, 255); */
+  background-image: url(tile2.jpg);
+  background-position: center; /* Center the image */
+  background-size: 100%;
+}
+
+.main .container {
+  padding: 1.5em 3em;
+}
+
+/* typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Kulim Park', sans-serif;
+  margin: 1em 0 1.5em;
+  line-height: 1.25em;
+}
+
+a {
+  text-decoration: none;
+}
+
+#submission {
+  text-align: center;
+  }
+
+.submitsection {
+  text-align:center;
+}
+
+/* gardens */
+.thoughts {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.thoughts .card {
+  border-radius: 15px;
+  height: 12vw;
+  width: 80vw;
+  margin-bottom: 2em;
+  text-align: center;
+  background-color: rgb(44, 61, 107);
+  color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 auto;
+}
+
+.thoughts .individual_card {
+  border-radius: 15px;
+  height: 25vw;
+  width: 80vw;
+  margin-bottom: 2em;
+  text-align: center;
+  background-color: rgb(44, 61, 107);
+  color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 auto;
+}
+
+.thoughts .form_card {
+  border-radius: 15px;
+  height: 40vw;
+  width: 80vw;
+  margin-bottom: 2em;
+  text-align: center;
+  background-color: rgb(44, 61, 107);
+  color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 auto;
+}
+
+.thoughts .users_card {
+  border-radius: 15px;
+  height: 80vw;
+  width: 50vw;
+  margin-bottom: 2em;
+  text-align: center;
+  background-color: rgb(44, 61, 107);
+  color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 auto;
+}
+
+.thoughts .user_card {
+  border-radius: 8px;
+  height: 10vw;
+  width: 30vw;
+  margin-bottom: 2em;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  color: rgb(211, 133, 166);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 auto;
+}
+
+.thoughts .blue_user_card {
+  border-radius: 8px;
+  height: 4vw;
+  width: 30vw;
+  margin-bottom: 2em;
+  text-align: center;
+  background-color: rgb(44, 61, 107);
+  color:  rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 auto;
+}
+
+.thoughts .small_user_card {
+  border-radius: 8px;
+  height: 4vw;
+  width: 20vw;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  color: rgb(211, 133, 166);
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 auto;
+}
+
+.thoughts .title_card {
+  border-radius: 15px;
+  height: 15vw;
+  width: 80vw;
+  margin-bottom: 2em;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  color: rgb(44, 61, 107);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 auto;
+}
+
+.thoughts .followers_card {
+  border-radius: 15px;
+  height: 25vw;
+  width: 80vw;
+  margin-bottom: 2em;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  color: rgb(44, 61, 107);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 auto;
+}
+
+.thoughts .card:hover {
+  color: rgb(211, 133, 166);
+}
+
+/* menu */
+.menu {
+  font-family: 'Open Sans', sans-serif;
+  background-color: rgb(211, 133, 166);
+}
+
+.menu .container,
+.menu nav {
+  display: flex;
+}
+
+.menu .logo {
+  background-image: url("logo.png");
+  background-size: 80px 40px;
+  width: 80px;
+  height: 40px;
+  background-repeat: no-repeat;
+  margin-right: 2em;
+}
+
+.menu .item {
+  padding: 1em;
+  color: #f1f1f1;
+  flex: 0 0 auto;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.menu a.item:hover {
+  opacity: 0.9;
+  background-color: rgb(44, 61, 107);
+}
+
+.menu .right {
+  margin-left: auto;
+  display: flex;
+}
+
+/* responsive width */
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 899px) {
+  .container {
+    width: 700px;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .container {
+    width: 800px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1100px;
+  }
+}
+
+/* forms */
+.form {
+  width: 100%;
+  padding: 1em;
+}
+
+.form label {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  margin: 1em 0 0.25em;
+}
+
+.form input, 
+.form select,
+.form textarea {
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  border: 1px solid rgba(34,36,38,.15);
+  padding: 0.5em 1em;
+}
+
+.form select {
+  outline: 0;
+  background: #fff;
+  border-radius: 0;
+	line-height:normal;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	-ms-appearance:none;
+	appearance:none;
+}
+
+.form input[type=checkbox],
+.form input[type=submit] {
+  width: auto;
+}
+
+.form label.checkbox {
+  display: initial;
+}
+
+.form .messages {
+  padding: 1em;
+}
+
+.form input[type=submit] {
+  margin-top: 1em;
+}
+
+.form .card {
+  height: 15vw;
+  width: 80vw;
+  margin-bottom: 2em;
+  text-align: center;
+  background-color: rgb(44, 61, 107);
+  color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 auto;
+}
+
+/* buttons */
+button,
+input[type=submit] {
+  display: block;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  color: #333;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0.75em 1.5em;
+  transition: opacity 0.2s ease;
+  margin-right: 1em;
+  font-family: 'Open Sans'
+  padding: 1em;
+  border: 2px solid #111;
+}
+
+button:hover,
+input[type=submit]:hover {
+  background-color: #fff;
+}
+
+.button_to {
+  display: inline-block;
+  padding: 1em 0;
+}
+
+.resizedTextbox {width: 400px; height: 40px}
+
+.button
+{
+  width: 150px;
+  text-align: center;
+  margin:0 auto;
+}
+
+.center {
+  width: 25%;
+  margin: 0 auto;
+}
+

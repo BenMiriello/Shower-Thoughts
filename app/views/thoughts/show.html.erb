@@ -1,0 +1,40 @@
+<br>
+<br>
+<br>
+<div class= "thoughts">
+  <div class = "individual_card">
+    <h4>"<%= @thought.text %>"</h4>
+      <p><%= @thought.likes.count - @thought.dislikes.count %> Likes | From user: <%= link_to "#{@thought.user.name}", user_path(@thought.user), class: "small_user_card" %></p>
+      <% if @current_user %>
+        <% if @current_user.liked_thoughts.include?(@thought) || @current_user.disliked_thoughts.include?(@thought) %>
+          <% @thought.likes.each do |like| %>
+            <% if like.user.id == @current_user.id %>
+              <%= button_to "Do not concur", like, :method => :delete, params: {thought_id: @thought.id, like_id: like.id} %>
+            <% end %>
+          <% end %>
+          <% @thought.dislikes.each do |dislike| %>
+            <% if dislike.user == @current_user %>
+              <%= button_to "Do not dissent", dislike, :method => :delete, params: {thought_id: @thought.id} %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <p><%= button_to "Concur", likes_path, params: {thought_id: @thought.id} %></p>
+          <p><%= button_to "Dissent", dislikes_path, params: {thought_id: @thought.id} %></p>
+        <% end %>
+      <% end %>
+  </div>
+</div>
+
+<% if @thought.user == @current_user %>
+  <%= button_to 'Edit', edit_thought_path(@thought), method: 'get', style: "text-align:center" %>
+  <br>
+  <%= button_to "Delete", thought_path(@thought), method: 'delete', style: "text-align:center", data: {confirm: "Are you sure you want to delete this thought?"} %>
+  <br>
+<% end %>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p><%= error %></p>
+  <% end%>
+<% end %>
+

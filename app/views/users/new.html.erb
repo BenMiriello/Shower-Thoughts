@@ -1,0 +1,31 @@
+<br><br><br><br><br><br>
+<div class="thoughts">
+  <div class="form_card">
+
+    <h1 style="text-align:center">Sign Up</h1>
+
+    <%= form_for @user do |f| %>
+
+    <%= f.label 'User Name' %>
+    <%= f.text_field :name %><br>
+    <br>
+    <%= f.label 'Password' %>
+    <%= f.password_field :password %><br>
+    <br>
+    <%= f.label 'Confirm Password' %>
+    <%= f.password_field :password_confirmation %><br>
+    <br>
+    <%= f.submit 'Sign Up' %>
+    <% end %>
+    <br>
+
+    <%= button_to 'I already own a shower. Start running the water for me.', login_path, method: :get %>
+
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <p><%= error %></p>
+      <% end%>
+    <% end %>
+
+  </div>
+</div>

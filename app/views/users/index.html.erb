@@ -1,0 +1,17 @@
+
+<br><br>
+<div class= "thoughts">
+  <div class= "title_card">
+    <h1 style="text-align:center">People who are thinking in the shower</h1>
+    <h4 style="text-align:center">We're all wearing bathing suits here.</h4>
+  </div>
+</div>
+<div class="thoughts">
+  <div class="users_card">
+
+    <% @users.each do |user| %>
+      <%= link_to user.name, user_path(user), class: "user_card" %>
+    <% end %>
+  </div>
+</div>
+

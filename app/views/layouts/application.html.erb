@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shower Thoughts</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link href="https://fonts.googleapis.com/css?family=Kulim+Park&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class= "menu">
+      <div class= "container">
+        <nav class= "left">
+          <h4><%= link_to "Users", users_path, method: :get, class: "item" %></h4>
+          <h4><%= link_to "Shower Thoughts", thoughts_path, method: :get, class: "item" %></h4>
+          <h4><%= link_to "Have a Thought", new_thought_path, class: "item" %></h4>
+        </nav>
+        <nav class= "right">
+          <% if @current_user %>
+            <h4><a><%= link_to "#{@current_user.name}", user_path(@current_user) %></a></h4>
+            <h4><%= link_to "Hop Out of the Shower", logout_path, method: :delete, class: "item" %>
+          <% else %>
+            <h4><%= link_to "Sign Up", signup_path, class: "item" %></h4>
+            <h4><%= link_to "Hop in the Shower", login_path, class: "item" %></h4>
+          <% end %>
+        </nav>
+      </div>
+    </header>
+    <div>
+      <div>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
+

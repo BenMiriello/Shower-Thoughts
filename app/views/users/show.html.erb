@@ -1,0 +1,50 @@
+<br><br>
+<div class= "thoughts">
+  <div class= "title_card">
+    <h1 style="text-align:center"><%= @user.name %>'s Thoughts:</h1>
+  </div>
+</div>
+
+<% @user_or_thoughts = @thoughts ||= @user.thoughts %>
+
+<% @user_or_thoughts.sort_by() %>
+
+<% @user_or_thoughts.each do |t| %>
+  <div class="thoughts">
+    <%= link_to thought_path(t), class: "card" do %>
+      <h4>"<%= t.text %>"</h4>
+      <p><%= t.likes.count - t.dislikes.count %> Likes | From user: <%= t.user.name %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<% if @user.followers.count >= 1 %>
+  <div class= "thoughts">
+    <div class= "followers_card">
+      <h2>Following <%= @user.name %>:</h2>
+      <% @user.followers.each do |f| %>
+        <a><%= link_to f.name, user_path(f), class: "blue_user_card" %></a>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<div class= "thoughts">
+  <div class= "followers_card">
+    <% if @current_user %>
+      <% if @current_user.id == @user.id %>
+        <%= button_to "Have a new Shower Thought™", new_thought_path, method: :get %>
+        <%= button_to "Delete my account. I prefer baths.", user_path, method: :delete, data: { confirm: "Are you sure you want to swear off showers and thought?" } %>
+      <% elsif @current_user.followees.include? @user %>
+        <%= button_to "Hop out of #{@user.name}'s shower", destroy_follow_path, method: :delete, params: {followee_id: @user.id} %>
+      <% end %>
+    <% end %>
+    <% if @current_user != @user %>
+      <h3 style="text-align:center"><%= button_to "Hop in the shower with #{@user.name}", controller: "follows", action: "create", method: 'post', params: {followee_id: @user.id} %></h3>
+    <% end %>
+  </div>
+</div>
+
+
+<br>
+

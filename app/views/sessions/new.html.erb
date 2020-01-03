@@ -1,0 +1,30 @@
+<br><br><br><br><br><br>
+<div class="thoughts">
+  <div class="form_card">
+    <h2 style="text-align:center">Sign in here. We started running the shower for you.</h2>
+    <%= form_for :session, url: login_path, html: { class: "form "} do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, :size=>"50"%>
+      
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      
+      <% if @errors %>
+        <ol class="messages">
+          <% @errors.each do |error| %>
+            <li>
+              <%= error %>
+            </li>
+          <% end %>
+        </ol>
+      <% end %>
+      <div class="button">
+        <input class="button" type="submit" value="Hop in the shower" />
+      </div>
+    <% end %>
+    <div class="button">
+      <%= button_to 'I don\'t own a shower yet. Sign me up.', signup_path, method: :get %>
+    </div>
+  </div>
+</div>
+

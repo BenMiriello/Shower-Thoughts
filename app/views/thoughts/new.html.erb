@@ -1,0 +1,25 @@
+
+<br><br><br><br><br><br>
+<% if @current_user %>
+  <div class="thoughts">
+    <div class="form_card">
+      <h1>Have a New Thought:</h1>
+      <%= form_for @thought do |f| %>
+      <br>
+      <%= f.text_field :text, class: "resizedTextbox" %><br>
+      <br>
+      <%= hidden_field_tag params: {user_id: @current_user.id} %>
+      <br>
+      <div class="center">
+        <%= f.submit 'Think It', type: "submit" %>
+      </div>
+      <% end %>
+
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <p><%= error %></p>
+        <% end%>
+      <% end %>
+    </div>
+  </div>
+<% end %>

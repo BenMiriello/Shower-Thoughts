@@ -1,0 +1,17 @@
+<h1>Welcome</h1>
+
+<% if logged_in? %>
+  <h1>You are Logged In, <%= @current_user.name %></h1>
+  <!-- log out option? -->
+  <p><%= button_to 'New Thought', new_thought_path, method: :get %></p>
+  <p></p>
+<% else %>
+  <% # button_to "Sign Up", '/login', method: :get %>
+  <% # button_to "Login", '/users/new', method: :get %>
+  <h2>You are'nt supposed to be here...</h2>
+<% end %>
+
+<%= button_to "Write a new thought", new_thought_path, method: :get %>
+<br>
+<%= button_to "Back to All Users", users_path(@user), method: :get %>
+

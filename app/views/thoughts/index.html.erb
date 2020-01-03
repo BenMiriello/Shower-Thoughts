@@ -1,0 +1,11 @@
+
+<br><br>
+<div class= "thoughts">
+  <div class= "title_card">
+    <h1 style="text-align:center">Shower Thoughts</h1>
+    <h3 style="text-align:center">They're the thoughts you have in the shower.</h3>
+  </div>
+</div>
+    <%= render :partial => 'shared/thought_list' %>
+    <br>
+    <%= button_to "Hey, I have a better thought than any of these!", new_thought_path, method: :get %>

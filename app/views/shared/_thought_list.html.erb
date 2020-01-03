@@ -1,0 +1,13 @@
+<% @user_or_thoughts = @thoughts ||= @user.thoughts %>
+
+<% @user_or_thoughts.sort_by { |t| -t.rating }.each do |t| %>
+  <div class="thoughts">
+    <%= link_to thought_path(t), class: "card" do %>
+      <h4>"<%= t.text %>"</h4>
+      <p><%= t.likes.count - t.dislikes.count %> Likes | From user: <%= t.user.name %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<!-- used in thoughts/index && users/show>
+
