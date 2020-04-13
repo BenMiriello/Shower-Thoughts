@@ -1,15 +1,27 @@
-Shower Thoughts
+# Shower Thoughts
 
-A social media site based on the subreddit of the same name.
+### A twitter-like social media site based on the subreddit of the same name.
 
-The site allows you to:
+## Technologies
+- Ruby on Rails
+- Rack
+- ActiveRecord
+- PostgreSQL
 
-Share your thoughts
+### Allowing the user to:
+- Share their thoughts
+- View other people's thoughts
+- Follow other users
+- Like and dislike other thoughts
+- Edit and delete their thoughts
 
-View other people's thoughts
+## Installation
+- Clone this repository
+- Open PostgreSQL
+- From the project directory, run command: 
+`bundle && rails db:create && rails db:migrate && rails db:seed && rails s
 
-Follow other users
+## Demo
+### *[Video](https://www.youtube.com/watch?v=JR47A5nyjGI)*
 
-Like and dislike other thoughts
-
-Edit and delete your thoughts
+![](app/assets/images/app-screenshot.jpg)
