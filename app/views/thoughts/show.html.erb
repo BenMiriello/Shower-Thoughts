@@ -4,7 +4,7 @@
 <div class= "thoughts">
   <div class = "individual_card">
     <h4>"<%= @thought.text %>"</h4>
-      <p><%= @thought.likes.count - @thought.dislikes.count %> Likes | From user: <%= link_to "#{@thought.user.name}", user_path(@thought.user), class: "small_user_card" %></p>
+      <p><%= @thought.likes.count - @thought.dislikes.count %> Likes | From user: <%= link_to @thought.user.name, user_path(@thought.user), class: "small_user_card" %></p>
       <% if @current_user %>
         <% if @current_user.liked_thoughts.include?(@thought) || @current_user.disliked_thoughts.include?(@thought) %>
           <% @thought.likes.each do |like| %>
