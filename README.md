@@ -6,7 +6,7 @@
 - Ruby on Rails
 - Rack
 - ActiveRecord
-- PostgreSQL
+- SQLite3
 
 ### Allowing the user to:
 - Share their thoughts
@@ -17,7 +17,7 @@
 
 ## Installation
 - Clone this repository
-- Open PostgreSQL
+- Open SQLite3
 - From the project directory, run command: 
 `bundle && rails db:create && rails db:migrate && rails db:seed && rails s
 
